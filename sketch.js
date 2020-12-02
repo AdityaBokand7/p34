@@ -41,7 +41,10 @@ dog.addImage(happyDog123)
   //add styles here
   textSize(27);
   fill("white")
-  text("Food Remaining :  "+foodS,100,100)
+  if(foodS!==undefined){
+    text("Food Remaining :  "+foodS,100,100)
+  }
+  
 
   textSize(20);
   fill("yellow")
@@ -58,7 +61,9 @@ if(x<0){
 }else{
   x=x-1
 }
-
+if(x===-1){
+  x=0
+}
   
   database.ref('/').update({
     Food:x
